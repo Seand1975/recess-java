@@ -86,7 +86,7 @@ public class Main {
         // Scanner input = new Scanner(System.in);
         System.out.println(
                 "\n-Welcome to ANKA Business Support Systems. \nThank you for participating in the competition.-");
-        System.out.println("[ Register, Post_product,Performance,Login,Qty_update,Delete,Quit ]\n");
+        System.out.println("COMMANDS:\n    Register: 'Register name password date_of_birth product' \n    Post_product: 'Post_product product_name \"description\" unit price' \n    Performance: 'Performance' \n    Login: 'Login name password' \n    Qty_update: 'Qty_update quantity' \n    Delete: 'Delete' \n    Quit: 'Quit' \n");
 
         runner();
 
