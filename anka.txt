@@ -1,0 +1,3 @@
+reg: wewe,ewww,2/2/2002,shuga
+reg: Pat,123#,2000-3-3,shoe
+reg: Pat,132#n,2000-3-3,shoe
