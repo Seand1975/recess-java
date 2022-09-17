@@ -14,14 +14,18 @@ public class Session {
         w.close();
     }
 
-    public static void init() throws FileNotFoundException{
-        FileReader r = new FileReader("session.txt");
-        Scanner s = new Scanner(r);
-        String currUser = s.nextLine();
-        String[] info = currUser.split(",");
-        s.close();
-        sessName = info[1];
-        sessItem = info[2];
+    public static void init(){
+        try {
+            FileReader r = new FileReader("session.txt");
+            Scanner s = new Scanner(r);
+            String currUser = s.nextLine();
+            String[] info = currUser.split(",");
+            s.close();
+            sessName = info[1];
+            sessItem = info[2];
+        } catch (FileNotFoundException e) {
+            System.out.print("");
+        }
     }
 
     public static void session() {
