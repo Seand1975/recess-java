@@ -2,8 +2,8 @@ import java.io.*;
 import java.util.*;
 
 public class Session {
-    public static String sessName;
-    public static String sessItem;
+    public static String sessName="";
+    public static String sessItem="";
 
     public static void define(String name, String item) throws IOException {
         sessName = name;
