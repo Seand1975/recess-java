@@ -7,12 +7,13 @@ public class Delete implements Serializable {
         Scanner sc = new Scanner(System.in);
         FileWriter out = new FileWriter("anka.txt", true);
         if(!Session.sessName.isEmpty()){
-            if(name == Session.sessName){
+            if(name.equals(Session.sessName)){
                 System.out.println("Do you really intend to delete your account?\nIf you do, type your username one more time.");
                 String verify = sc.nextLine();
-                if (verify == Session.sessName) {
+                if (verify.equals(Session.sessName)) {
                     String data = "del: "+verify+"\n";
                     out.write(data);
+                    FileWriter w = new FileWriter("session.txt",false);
                     Session.reset();
                     //wait for cron response here.
                 }
@@ -20,7 +21,5 @@ public class Delete implements Serializable {
                 System.out.println("That is not the name of the current logged in user.");
         }else
             System.out.println("No currently logged in account.");
-        out.close();
-        sc.close();
     }
 }

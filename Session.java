@@ -9,7 +9,7 @@ public class Session {
         sessName = name;
         sessItem = item;
         String sess = sessName+","+sessItem;
-        FileWriter w = new FileWriter("session.txt");
+        FileWriter w = new FileWriter("session.txt",false);
         w.write(sess);
         w.close();
     }
@@ -21,9 +21,9 @@ public class Session {
             String currUser = s.nextLine();
             String[] info = currUser.split(",");
             s.close();
-            sessName = info[1];
-            sessItem = info[2];
-        } catch (FileNotFoundException e) {
+            sessName = info[0];
+            sessItem = info[1];
+        } catch (Exception e) {
             System.out.print("");
         }
     }
