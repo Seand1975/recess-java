@@ -8,7 +8,7 @@ public class Delete implements Serializable {
         FileWriter out = new FileWriter("anka.txt", true);
         if(!Session.sessName.isEmpty()){
             if(name.equals(Session.sessName)){
-                System.out.println("Do you really intend to delete your account?\nIf you do, type your username one more time.");
+                System.out.println("Do you really intend to"+Main.RED+" delete"+Main.RESET+" your account?\nIf you do, type your username one more time.");
                 String verify = sc.nextLine();
                 if (verify.equals(Session.sessName)) {
                     String data = "del: "+verify+"\n";
