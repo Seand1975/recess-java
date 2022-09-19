@@ -32,7 +32,7 @@ public class Session {
        if (!sessName.isBlank()) {
         System.out.println("Participant: "+sessName+", Item: "+sessItem);
        } else {
-        System.out.println("No current user.");
+        System.out.println(Main.RED+"No current user."+Main.RESET);
        } 
     }
 
