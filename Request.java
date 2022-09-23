@@ -24,7 +24,7 @@ public class Request {
             System.out.println("Request sent, \n Response may take a while \n You may check later and the response will be available");
         } finally {
             //this part runs all the time
-            output.write("Request");
+            output.write("Request:"+Session.sessName);
             output.close();
         }
         
