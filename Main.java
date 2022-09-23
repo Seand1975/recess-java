@@ -138,7 +138,7 @@ public class Main {
         Session.init();
         System.out.println(GREEN+
                 "\n-Welcome to ANKA Business Support Systems. \nThank you for participating in the competition.-"+RESET);
-        System.out.println(RED+"COMMANDS"+RESET+":\n    "+GREEN+"Register"+RESET+": 'Register username password date_of_birth(yyyy/mm/dd) product' \n    "+GREEN+"Post_product"+RESET+": 'Post_product product_name description(use \'-\' to separate words) unit price' \n    "+GREEN+"Performance"+RESET+": 'Performance' \n    "+GREEN+"Login"+RESET+": 'Login username password' \n    "+GREEN+"Qty_update"+RESET+": 'Qty_update quantity' \n    "+GREEN+"Delete"+RESET+": 'Delete name' \n    "+GREEN+"Quit"+RESET+": 'Quit' \n    "+GREEN+"Session"+RESET+": 'Session' \n");
+        System.out.println(RED+"COMMANDS"+RESET+":\n    "+GREEN+"Register"+RESET+": 'Register username password date_of_birth(yyyy/mm/dd) product' \n    "+GREEN+"Post_product"+RESET+": 'Post_product product_name description(use \'-\' to separate words) unit_price' \n    "+GREEN+"Performance"+RESET+": 'Performance' \n    "+GREEN+"Login"+RESET+": 'Login username password' \n    "+GREEN+"Qty_update"+RESET+": 'Qty_update quantity' \n    "+GREEN+"Delete"+RESET+": 'Delete name' \n    "+GREEN+"Quit"+RESET+": 'Quit' \n    "+GREEN+"Session"+RESET+": 'Session' \n");
 
         runner();
         enter.close();
