@@ -14,10 +14,12 @@ public class Delete implements Serializable {
                     String data = "del: "+verify+"\n";
                     FileWriter out = new FileWriter("anka.txt", true);
                     out.write(data);
+                    System.out.println("This may take a while...");
                     CronResponse.get();
                     Session.reset();
                     out.close();
                     TimeUnit.SECONDS.sleep(10);
+                    System.out.println("Deleted.");
                 }
             }else
                 System.out.println("That is not the name of the current logged in account.");

@@ -35,7 +35,6 @@ public class Request {
             output.write(data);
             output.close();
         }
-        CronResponse.get();
         
     }
 }
