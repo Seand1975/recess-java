@@ -17,18 +17,16 @@ public class Main {
 
         switch (command[0]) {
             case "Register":
-                //System.out.print(RESET);
                 if (command.length == 5) {
                     Participant.register(command[1], command[2], command[3], command[4]);
                 } else
                     System.err.println(
-                            "Not enough arguments for "+RED+"Register"+RESET+".\nUse "+GREEN+"Register name password date_of_birth product"+RESET+" ");
+                            "Not enough arguments for "+RED+"Register"+RESET+".\nExample: "+GREEN+"Register johndoe j@ne456 1995/01/01 saucepans"+RESET);
                 runner();
                 break;
             case "Post_product":
-                //System.out.print(RESET);
                 if(Session.sessName.isBlank()){
-                    System.err.println("No user currently logged in or registered\nUse Login or Register command."+RESET);
+                    System.err.println(RED+"No user currently logged in or registered\nUse Login or Register command."+RESET);
                     runner();
                     break;
                 }
@@ -36,13 +34,12 @@ public class Main {
                     Post.postProduct(command[1], command[2], command[3]);
                 } else
                     System.err.println(
-                            "Not enough arguments for "+RED+"Post_product"+RESET+".\nUse "+GREEN+"Post_product product_name \"description\" unit price"+RESET+" ");
+                            "Not enough arguments for "+RED+"Post_product"+RESET+".\nExample: "+GREEN+"Post_product saucepans Saucepan-on-sale-,-buy-quick! 12"+RESET);
                 runner();
                 break;
             case "Qty_update":
-                //System.out.print(RESET);
                 if(Session.sessName.isBlank()){
-                    System.err.println("No user currently logged in or registered\nUse Login or Register command."+RESET);
+                    System.err.println(RED+"No user currently logged in or registered\nUse Login or Register command."+RESET);
                     runner();
                     break;
                 }
@@ -50,22 +47,20 @@ public class Main {
                     QuantityUpdate.publish(Integer.parseInt(command[1]));
                 } else
                     System.err.println(
-                            "Not enough arguments for "+RED+"Qty_update"+RESET+".\nUse "+GREEN+"Qty_update quanti"+RESET+"y");
+                            "Not enough arguments for "+RED+"Qty_update"+RESET+".\nExample: "+GREEN+"Qty_update 5"+RESET);
                 runner();
                 break;
             case "Login":
-                //System.out.print(RESET);
                 if (command.length == 3) {
                     Login.log(command[1], command[2]);
                 } else
                     System.err.println(
-                            "Not enough arguments for "+RED+"Login"+RESET+".\nUse "+GREEN+"Login name password"+RESET+" ");
+                            "Not enough arguments for "+RED+"Login"+RESET+".\nExample: "+GREEN+"Login johndoe j@ne456"+RESET);
                 runner();
                 break;
             case "Performance":
-                //System.out.print(RESET);
                 if(Session.sessName.isBlank()){
-                    System.err.println("No user currently logged in or registered\nUse Login or Register command."+RESET);
+                    System.err.println(RED+"No user currently logged in or registered\nUse Login or Register command."+RESET);
                     runner();
                     break;
                 }
@@ -73,23 +68,21 @@ public class Main {
                     Request.requested();
                 } else
                     System.err.println(
-                            "Too many arguments for "+RED+"Performance"+RESET+".\nUse "+GREEN+"Performance"+RESET+" ");
+                            "Too many arguments for "+RED+"Performance"+RESET+".\nExample: "+GREEN+"Performance"+RESET);
                 runner();
                 break;
             case "Quit":
-                //System.out.print(RESET);
                 if (command.length == 1) {
                     termination();
                 } else {
                     System.err.println(
-                            "Too many arguments for "+RED+"Quit"+RESET+".\nUse "+GREEN+"Quit"+RESET+" ");
+                            "Too many arguments for "+RED+"Quit"+RESET+".\nExample: "+GREEN+"Quit"+RESET);
                     runner();
                 }
                 break;
             case "Delete":
-                //System.out.print(RESET);
                 if(Session.sessName.isBlank()){
-                    System.err.println("No user currently logged in or registered\nUse Login or Register command."+RESET);
+                    System.err.println(RED+"No user currently logged in or registered\nUse Login or Register command."+RESET);
                     runner();
                     break;
                 }
@@ -97,22 +90,21 @@ public class Main {
                     Delete.del(command[1]);
                 } else {
                     System.err.println(
-                            "Not enough arguments for "+RED+"Delete"+RESET+".\nUse "+GREEN+"Delete name"+RESET+" ");
+                            "Not enough arguments for "+RED+"Delete"+RESET+".\nExample: "+GREEN+"Delete johndoe"+RESET);
                 }
                 runner();
                 break;
             case "Session":
-                //System.out.print(RESET);
                 if (command.length == 1) {
                     Session.session();
                 } else
                 System.err.println(
-                        "Too many arguments for "+RED+"Session"+RESET+".\nUse "+GREEN+"Session"+RESET+" ");
+                        "Too many arguments for "+RED+"Session"+RESET+".\nExample: "+GREEN+"Session"+RESET);
                 
                 runner();
                 break;
             default:
-                System.err.println("Unknown command."+RESET);
+                System.err.println(RED+"Unknown command."+RESET);
                 runner();
         }
     }

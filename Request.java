@@ -1,10 +1,10 @@
 import java.io.*;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Request {
     public static void requested() throws Exception {
-        FileWriter output = new FileWriter("Request.txt",false);
-        
+        boolean seen = false;
         try {
             FileReader input = new FileReader("Request.txt");
             Scanner scan = new Scanner(input);
@@ -18,16 +18,24 @@ public class Request {
                     }
                 }
             }
-            System.out.println("New request being made to server");
+            seen = true;
+            System.out.println(Main.GREEN+"New request being made to server"+Main.RESET);
         } catch (Exception e) {
             //this part only runs the first time a request is made
-            System.out.println("Request sent, \n Response may take a while \n You may check later and the response will be available");
+            System.out.println(Main.GREEN+"Request sent, \n Response may take a while \n You may check later (about 2 minutes) and the response will be available"+Main.RESET);
         } finally {
             //this part runs all the time
-            output.write("Request:"+Session.sessName);
+            FileWriter output = new FileWriter("Request.txt",false);
+            String date = LocalDateTime.now().toString();
+            date = date.replaceAll("-", "/");
+            String data = "Request:"+Session.sessName+","+date;
+            if (seen) {
+                data = "Seen:"+Session.sessName+","+date+"\n"+data;
+            }
+            output.write(data);
             output.close();
         }
-        
+        CronResponse.get();
         
     }
 }

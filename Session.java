@@ -36,8 +36,10 @@ public class Session {
        } 
     }
 
-    public static void reset() {
+    public static void reset() throws IOException{
+        FileWriter w = new FileWriter("session.txt",false);
         sessName = "";
         sessItem = "";
+        w.close();
     }
 }

@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class Delete implements Serializable {
 
@@ -13,14 +14,13 @@ public class Delete implements Serializable {
                     String data = "del: "+verify+"\n";
                     FileWriter out = new FileWriter("anka.txt", true);
                     out.write(data);
-                    FileWriter w = new FileWriter("session.txt",false);
+                    CronResponse.get();
                     Session.reset();
                     out.close();
-                    w.close();
-                    //wait for cron response here.
+                    TimeUnit.SECONDS.sleep(10);
                 }
             }else
-                System.out.println("That is not the name of the current logged in user.");
+                System.out.println("That is not the name of the current logged in account.");
         }else
             System.out.println("No currently logged in account.");
     }
