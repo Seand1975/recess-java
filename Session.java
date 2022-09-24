@@ -21,6 +21,7 @@ public class Session {
             String currUser = s.nextLine();
             String[] info = currUser.split(",");
             s.close();
+            //Post.posted = true;
             sessName = info[0];
             sessItem = info[1];
         } catch (Exception e) {
